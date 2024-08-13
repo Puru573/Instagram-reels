@@ -1,0 +1,106 @@
+.loginWrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+.login{
+    width:27vw;
+    margin-top: 10%;
+}
+.insta-logo{
+    text-align: center;
+    margin-top: 2rem;
+}
+.imgCar>img{
+    background-size: cover;
+    height:590px;
+    width:441px;
+    margin-top: 8vh;
+    position: relative;
+}
+
+.car{
+    height: 423px;
+    width:243px;
+    position: absolute;
+    left:482px;
+    top:150px;
+}
+
+@media only screen and (max-width:450px) {
+    .loginWrapper{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .login{
+        width:100vw;
+        margin-top: 10%;
+    }
+    .imgCar>img{
+        background-size: cover;
+        height:469px;
+        width:350px;
+        margin-top: 8vh;
+        position: relative;
+    }
+    
+    .car{
+        width:193px;
+        position: absolute;
+        left:110px;
+        top:110px;
+    }
+}
+
+@media only screen and (min-width:450px) and (max-width:1024px) {
+    .loginWrapper{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .login{
+        width:70vw;
+        margin-top: 10%;
+    }
+    .imgCar>img{
+        background-size: cover;
+        height:469px;
+        width:350px;
+        margin-top: 8vh;
+        position: relative;
+    }
+    
+    .car{
+        width:193px;
+        position: absolute;
+        left:110px;
+        top:110px;
+    }
+}
+
+@media only screen and (min-width:1025px) and (max-width:1500px) {
+    .loginWrapper{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .login{
+        width:100vw;
+        margin-top: 10%;
+    }
+    .imgCar>img{
+        background-size: cover;
+        height:469px;
+        width:350px;
+        margin-top: 8vh;
+        position: relative;
+    }
+    
+    .car{
+        width:193px;
+        position: absolute;
+        left:111px;
+        top:149px;
+    }
+}

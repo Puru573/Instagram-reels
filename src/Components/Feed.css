@@ -1,0 +1,20 @@
+.feed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.innerFeed{
+    width:50%;
+}
+
+.loadingbtn{
+    margin-top:2%;
+    position: relative;
+    width: 100%;
+}
+
+.input{
+    display: none;
+}

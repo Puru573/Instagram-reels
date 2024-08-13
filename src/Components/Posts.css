@@ -1,0 +1,194 @@
+  .video-container{
+    height: 80vh;
+    border-radius: 20px;
+    background-color: white;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+  }
+
+  .video-container::-webkit-scrollbar{
+    display: none;
+  }
+
+  .videos{
+    position: relative;
+  }
+  .fa{
+    position: absolute;
+    display: flex;
+    bottom: 18%;
+    left:10%
+  }
+  .fa h4{
+    color: white;
+    margin-top: 2%;
+    margin-left: 3%;
+    width:34vh;
+  }
+
+  .like{
+    color:red;
+    cursor: pointer;
+    position: absolute;
+    bottom: 17%;
+    width:34vh;
+    margin-left: 25%;
+
+
+
+  }
+
+  .unlike{
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 17%;
+    width:34vh;
+    margin-left: 25%;
+  }
+
+  .commentModal{
+    color:white;
+    position: absolute;
+    bottom: 17%;
+    left:35%
+  }
+.modal-container{
+  display: flex;
+  width: 100%;
+  height:100%;
+  justify-content: space-around;
+  overflow-y: hidden;
+}
+
+.video-modal{
+  width: 45%;
+  height: 100%;
+}
+.comment-container{
+  width: 50%;
+  height: 100%;
+}
+.modal-video{
+  height: 100%;
+  width: 100%;
+}
+
+ .comment-tools{
+  display: flex;
+  justify-content: space-around;
+} 
+.comment-tools .like{
+  color:red;
+  cursor: pointer;
+  position: relative;
+  top:0.5rem;
+  left:-0.4rem;
+
+} 
+
+.comment-tools .unlike{
+  color: black;
+  cursor: pointer;
+  position: relative;
+  top:0.5rem;
+  left:-0.4rem;
+} 
+
+.addComment{
+  width:100%;
+}
+
+.textLike{
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.card1{
+  height:70vh;
+}
+.card1 .showCoomentbox {
+  max-height: 500px;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.card1 .showComment{
+  display: flex;
+  gap:1rem;
+ 
+}
+
+.commentText{
+  margin-top: 3%;
+}
+
+.navImage{
+  margin-left: 3%;
+}
+
+.uploadStyling{
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+
+@media only screen and (min-width:310px) and (max-width:691px) {  
+.card1{
+  height:60vh;
+}
+.modal-video{
+  width: 45%;
+  position: absolute;
+  height: 56vh;
+}
+.card1 .showCoomentbox {
+  max-height: 350px;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.card1 .showComment{
+  display: flex; 
+}
+.commentText{
+  font-size: 12px;
+  word-wrap: break-word;
+}
+.showComment .avatarimg{
+  height:2rem;
+  width:2rem;
+  
+}
+.card1 .showCoomentbox{
+  display: flex;
+  flex-direction: column;
+  gap:1.5rem;
+}
+.comment-tools{
+  display: flex;
+  justify-content: space-around;
+}
+.comment-tools .addComment .resfield{
+  width:100%
+}
+.comment-tools .addComment Button{
+  width:50%;
+  height:50%;
+  margin-top: 0.5rem;
+}
+
+.comment-tools .like{
+  height:23%;
+}
+
+.comment-tools .unlike{
+  height:23%;
+}
+.card2 .textLike{
+  font-size: 13px;
+}
+
+}
+
