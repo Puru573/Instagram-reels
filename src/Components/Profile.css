@@ -31,11 +31,17 @@
 .profile-videos{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .profile-videos .videos video{
     height: 20rem;
     padding: 0.5rem;
+}
+
+.profilesec{
+    text-align: center;
 }
 
 @media only screen and (max-width:450px) {
@@ -50,6 +56,10 @@
         font-weight: bold;
         word-wrap: break-word;
         max-width: 50vw;
+    }
+    .profilesec{
+        text-align: center;
+        font-size: 13px;
     }
 
     .upper-part{
@@ -80,6 +90,10 @@
         border-radius: 50%;
     }
 
+    .profilesec{
+        text-align: center;
+        font-size: 16px;
+    }
     .info .infodata{
         font-size: 15px;
         font-weight: bold;

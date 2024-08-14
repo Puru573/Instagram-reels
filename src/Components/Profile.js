@@ -35,7 +35,7 @@ function Profile() {
       if(userData!=null){
         let parr=[];
         for(let i=0;i<userData?.postIds?.length;i++){
-          let postData= await database.posts.doc(userData.postIds[i]).get();
+          let postData= await database.posts.doc(userData.postIds[i]).get();  //only we can see the individual user post
           parr.push({...postData.data(),postId:postData.id});
         }
         setPosts(parr);
@@ -46,16 +46,19 @@ function Profile() {
     },[userData])
   
     const updatePostData = useCallback((postId,updatedData)=>{  //we prevent it from multiple render
-      setPosts((prevPosts) =>
-        prevPosts.map((post) => (post.postId === postId ? updatedData : post))
-      );
+        setPosts((prevPosts) =>
+          prevPosts.map((post) => (post.postId === postId ? updatedData : post))
+        );
+      
   },[]);
 
   return (
     <>
+    {console.log("postsssss",posts)}
+    {console.log("userData",userData)}
 
     {
-      posts==null  ||userData==null? <CircularProgress/>:
+      posts===null  ||  userData===null ? <CircularProgress/>:
       <>
       <Navbar userData={userData}/>
       <div className='spacer'>
@@ -69,13 +72,15 @@ function Profile() {
                 Email:{userData.email}
               </Typography>
               <Typography  className='infodata' variant="h6">
-                Posts:{userData.postIds.length}
+                Posts:{userData?.postIds?.length?userData?.postIds?.length: "No post yet"}
                 </Typography>
             </div>
           </div>
           <hr style={{width:'100%'}}></hr>
           <div className="profile-videos">
             {
+              posts.length===0?
+              <div className='profilesec'> <h1> Please upload the Videos </h1></div> :
               posts?.map((post, index) => (
                 <React.Fragment key={index}>
                   <div className='videos'>

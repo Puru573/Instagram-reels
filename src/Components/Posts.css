@@ -63,7 +63,7 @@
 }
 
 .video-modal{
-  width: 45%;
+  width: 40%;
   height: 100%;
 }
 .comment-container{
@@ -138,6 +138,7 @@
 .card1{
   height:60vh;
 }
+
 .modal-video{
   width: 45%;
   position: absolute;
@@ -148,6 +149,9 @@
   overflow: scroll;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
+}
+.card1 .commBox{
+  max-height: 350px;
 }
 .card1 .showComment{
   display: flex; 
@@ -190,5 +194,13 @@
   font-size: 13px;
 }
 
+}
+
+@media only screen and (min-width:825px) and (max-width:1500px) {
+  .video-modal{
+    width: 34%;
+    height: 100%;
+  }
+  
 }
 

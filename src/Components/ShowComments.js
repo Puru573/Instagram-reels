@@ -19,7 +19,7 @@ function ShowComments({postData}) {
         collectionComment();
     },[postData])
   return (
-    <div>
+    <div className='commBox'>
         {
             comments==null ? <CircularProgress/> :
             <div className='showCoomentbox'>

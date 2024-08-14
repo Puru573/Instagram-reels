@@ -12,6 +12,8 @@ import "./Posts.css"
 function UploadFile({ userData }) {
     const [loading, setLoading] = useState(false);
     const [err, setErr] = useState("");
+    const [msg, setMsg] = useState("");
+
 
     const handleChange = async (file) => {
         if (file === null) {
@@ -21,7 +23,14 @@ function UploadFile({ userData }) {
             }, 2000)
             return;
         }
-        if (file.size > 1024 * 1024 * 100){
+        if (file.type != "video/mp4") {
+            setErr("please upload a video only");
+            setTimeout(() => {
+                setErr("");
+            }, 2000)
+            return;
+        }
+        if (file.size > 1024 * 1024 * 100) {
             setErr("please select a file size less than 100 mb");
             setTimeout(() => {
                 setErr("");
@@ -66,10 +75,13 @@ function UploadFile({ userData }) {
                         if (res) {
                             try {
                                 await database.users.doc(userData.userId).update({
-                                    postIds: userData.postIds!=null? [...userData.postIds, res.id]:[res.id]
+                                    postIds: userData.postIds != null ? [...userData.postIds, res.id] : [res.id]
                                 })
-                                    setLoading(false);
-                                
+                                setLoading(false);
+                                setMsg("your video is successfully uploaded");
+                                setTimeout(() => {
+                                    setMsg("")
+                                }, 2000);
                             }
                             catch (error) {
                                 setErr(error)
@@ -96,21 +108,23 @@ function UploadFile({ userData }) {
     return (
         <div className='uploadStyling'>
             {
-                err != "" ? <Alert severity="error">{err}</Alert> :
-                    <div>
-                        <input type="file" accept='video/*' id="upload-input" onChange={(e) => handleChange(e.target.files[0])} className='input' />
-                        <label htmlFor="upload-input">
-                            <Button
-                                variant="outlined"
-                                color="secondary"
-                                component="span"
-                                disabled={loading}
-                            >
-                                <MovieIcon />&nbsp;upload video
-                            </Button>
-                        </label>
-                        {loading && <LinearProgress color="secondary" className='loadingbtn' />}
-                    </div>
+                msg != "" ? <Alert severity="success">{msg}</Alert> :
+                    err != "" ? <Alert severity="error">{err}</Alert> :
+                        <div>
+                            <input type="file" accept='video/*' id="upload-input" onChange={(e) => handleChange(e.target.files[0])} className='input' />
+                            <label htmlFor="upload-input">
+                                <Button
+                                    variant="outlined"
+                                    color="secondary"
+                                    component="span"
+                                    disabled={loading}
+                                >
+                                    <MovieIcon />&nbsp;upload video
+                                </Button>
+                            </label>
+                            {loading && <LinearProgress color="secondary" className='loadingbtn' />}
+                        </div>
+
 
             }
 

@@ -16,12 +16,14 @@ function Feed() {
       onsub();
     }
   }, [user])
+
+
   return (
     <>
       <Navbar userData={userData}/>
       <div className='feed'>
         <UploadFile userData={userData} />
-        <Posts userData={userData} />
+        <Posts userData={userData}/>
       </div>
     </>
 
