@@ -26,6 +26,18 @@ function Posts({ userData }) {
     return () => { onsub() };
 
   }, []);
+  const handleDuplicates=(publicPost)=>{
+    for(let i=0;i<=publicPost.length-1;i++){
+      for(let j=1;j<publicPost.length;j++){
+        if(publicPost[i].userId === publicPost[j].userId){
+          publicPost.splice(i,1);
+          i--;
+        }
+      }
+      return publicPost
+    }
+  }
+
   useEffect(() => {
     let parr = [];
     const onsub = database.users.orderBy("createdAt", "desc").onSnapshot((querySnapshot) => {
@@ -34,12 +46,9 @@ function Posts({ userData }) {
         parr.push(data)
       })
       if (parr?.length > 0) {
-        let publicPost = parr.filter((item) => {
-          if (item?.postIds?.length > 0) {
-            return item;
-          }
-        })
-        setCommentPost(publicPost);
+        let publicPost = parr.filter((item) => item?.postIds?.length > 0);
+       let ans= handleDuplicates(publicPost);
+        setCommentPost(ans);
       }
      
     })
@@ -78,6 +87,7 @@ function Posts({ userData }) {
 
   return (
     <div>
+      {console.log("commnetpost",CommentPost)}
       {
         posts === null || userData === null ? <CircularProgress /> :
           <div className="video-container">
