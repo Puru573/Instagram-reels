@@ -54,8 +54,6 @@ function Profile() {
 
   return (
     <>
-    {console.log("postsssss",posts)}
-    {console.log("userData",userData)}
 
     {
       posts===null  ||  userData===null ? <CircularProgress/>:

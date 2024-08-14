@@ -39,7 +39,6 @@ function Posts({ userData }) {
             return item;
           }
         })
-        console.log("publicPost", publicPost);
         setCommentPost(publicPost);
       }
      
@@ -79,15 +78,12 @@ function Posts({ userData }) {
 
   return (
     <div>
-      {console.log("commentposttt", CommentPost)}
-      {console.log("postsssss", posts)}
       {
         posts === null || userData === null ? <CircularProgress /> :
           <div className="video-container">
             {
               posts?.map((post, index) => (
                 <React.Fragment key={index}>
-                  {console.log("post",post)}
                   <div className='videos'>
                     <Videos src={post.purl} />
                     <div className='fa'>
