@@ -30,8 +30,8 @@ function Posts({ userData }) {
     for(let i=0;i<=publicPost.length-1;i++){
       for(let j=1;j<publicPost.length;j++){
         if(publicPost[i].userId === publicPost[j].userId){
-          publicPost.splice(i,1);
-          i--;
+          publicPost.splice(j,1);
+          j--;
         }
       }
       return publicPost
@@ -87,7 +87,6 @@ function Posts({ userData }) {
 
   return (
     <div>
-      {console.log("commnetpost",CommentPost)}
       {
         posts === null || userData === null ? <CircularProgress /> :
           <div className="video-container">
