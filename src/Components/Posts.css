@@ -74,6 +74,7 @@
 .modal-video video{
   position: absolute;
   height: 76.5vh;
+  max-width: 300px;
 }
 
  .comment-tools{
