@@ -13,6 +13,7 @@ function UploadFile({ userData }) {
     const [loading, setLoading] = useState(false);
     const [err, setErr] = useState("");
     const [msg, setMsg] = useState("");
+    const [progress, setProgress] = useState(0); // New state for progress
 
 
     const handleChange = async (file) => {
@@ -47,6 +48,7 @@ function UploadFile({ userData }) {
                 function fn1(snapshot) {
                     let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     console.log(`upload is ${progress} done`);
+                    setProgress(progress);
                 }
                 //error
                 function fn2(error) {
@@ -122,7 +124,12 @@ function UploadFile({ userData }) {
                                     <MovieIcon />&nbsp;upload video
                                 </Button>
                             </label>
-                            {loading && <LinearProgress color="secondary" className='loadingbtn' />}
+                            {loading && <LinearProgress 
+                            color="secondary" 
+                            className='loadingbtn' 
+                            variant="determinate" 
+                            value={progress} 
+                        />}
                         </div>
 
 

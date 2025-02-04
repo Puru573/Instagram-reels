@@ -9,7 +9,7 @@ function Feed() {
   const { user, logout } = useContext(AuthContext);
   const [userData, setUserData] = useState("");
   useEffect(() => {
-    const onsub = database.users.doc(user.uid).onSnapshot((snapshot) => {
+    const onsub = database?.users.doc(user.uid).onSnapshot((snapshot) => {
       setUserData(snapshot.data());
     })
     return () => {

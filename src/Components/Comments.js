@@ -48,7 +48,9 @@ function Comments({ userData, postData, updatePostData }) {
                         >
                             <div className='modal-container'>
                                 <div className='video-modal'>
-                                    <video autoPlay={true} muted="muted" controls className='modal-video'><source src={postData.purl}/></video>
+                                    <div class="modal-video">
+                                    <video autoPlay={true} muted="muted" controls><source src={postData.purl}/></video>
+                                    </div>
                                 </div>
 
                                 <div className='comment-container'>

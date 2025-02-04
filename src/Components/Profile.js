@@ -93,7 +93,9 @@ function Profile() {
                         >
                             <div className='modal-container'>
                                 <div className='video-modal'>
-                                    <video autoPlay={true} muted="muted" controls className='modal-video'><source src={post.purl}/></video>
+                                  <div className="modal-video">
+                                  <video autoPlay={true} muted="muted" controls><source src={post.purl}/></video>
+                                  </div>
                                 </div>
 
                                 <div className='comment-container'>

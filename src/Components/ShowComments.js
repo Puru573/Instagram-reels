@@ -27,7 +27,7 @@ function ShowComments({postData}) {
                 comments?.map((comment,index)=>(
                     <div className='showComment' key={index}>
                         <Avatar className='avatarimg' src={comment.uProfileImage}/>
-                        <p className='commentText'><span>{comment.uName}</span>&nbsp;&nbsp;{comment.text}</p>
+                        <p className='commentText'><span>{comment.uName}</span> <p>{comment.text}</p></p>
                     </div>
                 ))
             }
