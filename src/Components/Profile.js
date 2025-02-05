@@ -76,12 +76,14 @@ function Profile() {
           </div>
           <hr style={{width:'100%'}}></hr>
           <div className="profile-videos">
+            
             {
               posts.length===0?
               <div className='profilesec'> <h1> Please upload the Videos </h1></div> :
               posts?.map((post, index) => (
                 <React.Fragment key={index}>
                   <div className='videos'>
+                    <div className="video-wrapper">
                     <video  muted="muted" onClick={()=>handleClickOpen(post.pid)}><source src={post.purl}/></video>
                         <Dialog
                             open={open===post.pid}
@@ -114,6 +116,8 @@ function Profile() {
 
                             </div>
                         </Dialog>
+                    </div>
+                   
                   </div>
                 </React.Fragment>
               ))
