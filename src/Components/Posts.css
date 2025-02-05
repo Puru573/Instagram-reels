@@ -112,7 +112,7 @@
 }
 .card1 .showCoomentbox {
   max-height: 500px;
-  overflow: scroll;
+  overflow: auto;
 }
 .card1 .showComment{
   display: flex;
@@ -166,6 +166,7 @@
   position: absolute;
   width: 100%;
   height: 58vh;
+  max-width: none;
 }
 .comment-container {
   height: 32vh;
@@ -195,6 +196,7 @@
   position: absolute;
   width: 100%;
   height: 58vh;
+  max-width: none;
 }
 .comment-container {
   height: 32vh;

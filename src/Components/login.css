@@ -1,106 +1,43 @@
 .loginWrapper{
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 .login{
-    width:27vw;
-    margin-top: 10%;
+    width:50%;
+    padding: 1rem;
 }
 .insta-logo{
     text-align: center;
     margin-top: 2rem;
 }
-.imgCar>img{
-    background-size: cover;
-    height:590px;
-    width:441px;
-    margin-top: 8vh;
-    position: relative;
-}
-
-.car{
-    height: 423px;
-    width:243px;
+/* Container for the phone image and the carousel overlay */
+.imgCar {
+    position: relative; /* Create a positioning context */
+    max-width: 400px;   /* Adjust as needed */
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  /* Make sure the phone image scales responsively */
+  .imgCar img {
+    width: 100%;
+  }
+  
+  /* The carousel overlay container placed over the phone screen */
+  .imgCar .car {
     position: absolute;
-    left:482px;
-    top:150px;
-}
-
-@media only screen and (max-width:450px) {
+    top: 15%;
+    left: 32%;
+    width: 55%;
+  }
+@media only screen and (max-width:768px) {
     .loginWrapper{
         display: flex;
-        justify-content: space-around;
-        
+        flex-direction: column;
+        align-items: center;        
     }
     .login{
-        width:100vw;
-        margin-top: 10%;
-    }
-    .imgCar>img{
-        background-size: cover;
-        height:469px;
-        width:350px;
-        margin-top: 8vh;
-        position: relative;
-    }
-    
-    .car{
-        width:193px;
-        position: absolute;
-        left:110px;
-        top:110px;
-    }
-}
-
-@media only screen and (min-width:450px) and (max-width:1024px) {
-    .loginWrapper{
-        display: flex;
-        justify-content: space-around;
-        
-    }
-    .login{
-        width:70vw;
-        margin-top: 10%;
-    }
-    .imgCar>img{
-        background-size: cover;
-        height:469px;
-        width:350px;
-        margin-top: 8vh;
-        position: relative;
-    }
-    
-    .car{
-        width:193px;
-        position: absolute;
-        left:110px;
-        top:120px;
-    }
-}
-
-@media only screen and (min-width:1025px) and (max-width:1500px) {
-    .loginWrapper{
-        display: flex;
-        justify-content: space-around;
-        
-    }
-    .login{
-        width:100vw;
-        margin-top: 10%;
-    }
-    .imgCar>img{
-        background-size: cover;
-        height:469px;
-        width:350px;
-        margin-top: 8vh;
-        position: relative;
-    }
-    
-    .car{
-        width:193px;
-        position: absolute;
-        left:111px;
-        top:118px;
+        width:100%;
     }
 }
