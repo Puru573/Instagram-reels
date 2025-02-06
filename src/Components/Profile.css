@@ -26,11 +26,15 @@
     gap: 1rem; /* optional: adds spacing between items */
     justify-content: space-evenly;
   }
-  
+  .profile-videos .videos:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
   .profile-videos .videos {
     position: relative;
     width: 250px;
     height: 400px;
+    transition: transform .2s ease-in-out;
 }
 
 .video-wrapper video {
